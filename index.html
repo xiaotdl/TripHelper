@@ -5,6 +5,11 @@
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/triphelper.js"></script>
 		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				getTravelCategories();
+			});
+		</script>
 		<title>TripHelper home</title>
 	</head>	
 	<body style="text-align:center">
@@ -14,81 +19,71 @@
 		<div>
 			<h3>
 				<p>
-					<input type="text" id="citySearch" size="55"/>
+					<input type="text" value="Where are you going?" id="citySearch" size="55"/>
 				</p>
-				<br>
 				<p>
-					<input type="button" class="btn btn-primary btn-lg" value="Search Address" id="citySearch"> &nbsp&nbsp&nbsp&nbsp&nbsp
+					<input type="button" class="btn btn-primary btn-lg" value="Search Address" id="citySearch" onClick="showMore()"> &nbsp&nbsp&nbsp&nbsp&nbsp
 					<input type="button" class="btn btn-primary btn-lg" value="Find Me" id="geoSearch">
 			</h3>
 		</div>
-		<div style=>
-			<p><h3>When are you going?</h3></p>
-			<p>Leaving: <input type="text"></p>
-			<p>Returning: <input type="text"></p>
-		</div>
-		<div>
-			<p><h3>What do you want to see?</h3></p>
-			<div class="btn-group" data-toggle="buttons">
-			  <label class="btn btn-primary">
-			    <input type="checkbox"> Performances
-			  </label>
-			  <label class="btn btn-primary">
-			    <input type="checkbox"> Sightseeing
-			  </label>
-			  <label class="btn btn-primary">
-			    <input type="checkbox"> Cultural
-			  </label>
-			  <label class="btn btn-primary">
-			    <input type="checkbox"> Meseum
-			  </label>
-			  <label class="btn btn-primary">
-			    <input type="checkbox"> Sports
-			  </label>
-			  <label class="btn btn-primary">
-			    <input type="checkbox"> Amusement
-			  </label>
+		<div id="moreOptions" style="display:none">
+			<div>
+				<p><h3>When are you going?</h3></p>
+				<p>Leaving: <input type="text"></p>
+				<p>Returning: <input type="text"></p>
 			</div>
-		</div>
-		<div>
-			<p><h3>What do you want to eat?</h3></p>
-			<div class="btn-group" data-toggle="buttons">
-			  <label class="btn btn-primary">
-			    <input type="checkbox"> American
-			  </label>
-			  <label class="btn btn-primary">
-			    <input type="checkbox"> Asian
-			  </label>
-			  <label class="btn btn-primary">
-			    <input type="checkbox"> Italian
-			  </label>
-			  <label class="btn btn-primary">
-			    <input type="checkbox"> Bars
-			  </label>
+			<div>
+				<p><h3>What do you want to see?</h3> <h5>powered by:<img style="width:90px; height:29px" src="http://www.the-digital-reader.com/wp-content/uploads/2012/07/pearson-logo-on-white1.jpg" /></h5></p>
+				<div id="categories" class="btn-group" data-toggle="buttons">
+				</div>
 			</div>
-		</div>
-		<div>
-			<p><h3>Anything else we should know?</h3></p>
-			<div class="btn-group" data-toggle="buttons">
-			  <label class="btn btn-primary">
-			    <input type="checkbox"> Friends
-			  </label>
-			  <label class="btn btn-primary">
-			    <input type="checkbox"> Couples
-			  </label>
-			  <label class="btn btn-primary">
-			    <input type="checkbox"> Family
-			  </label>
-			  <label class="btn btn-primary">
-			    <input type="checkbox"> Kid
-			  </label>
-			  <label class="btn btn-primary">
-			    <input type="checkbox"> Old People
-			  </label>
+			<div>
+				<p><h3>What do you want to eat?</h3></p>
+				<div class="btn-group" data-toggle="buttons">
+				  <label class="btn btn-primary">
+				    <input type="checkbox"> American
+				  </label>
+				  <label class="btn btn-primary">
+				    <input type="checkbox"> Asian
+				  </label>
+				  <label class="btn btn-primary">
+				    <input type="checkbox"> Italian
+				  </label>
+				  <label class="btn btn-primary">
+				    <input type="checkbox"> Bars
+				  </label>
+				</div>
 			</div>
-		</div>
-		<div style="margin-top:20px">
-			<a class="btn btn-lg btn-primary">Plan my trip!</a>
+			<div>
+				<p><h3>Anything else we should know?</h3></p>
+				<div class="btn-group" data-toggle="buttons">
+				  <label class="btn btn-primary">
+				    <input type="checkbox"> Friends
+				  </label>
+				  <label class="btn btn-primary">
+				    <input type="checkbox"> Couples
+				  </label>
+				  <label class="btn btn-primary">
+				    <input type="checkbox"> Family
+				  </label>
+				  <label class="btn btn-primary">
+				    <input type="checkbox"> Kid
+				  </label>
+				  <label class="btn btn-primary">
+				    <input type="checkbox"> Wheelchair
+				  </label>
+				</div>
+				<div>
+					<p><h3>How about a tour guide?</h3></p>
+					<div class="btn-group" data-toggle="buttons">
+					  <label class="btn btn-primary">
+					    <input type="checkbox"><img height="50px" width="50px" src="http://orbotix.wpengine.netdna-cdn.com/wp-content/uploads/sphero-logo-vertical-blue-reg.jpg"/>
+					  </label>
+					</div>
+			</div>
+			<div style="margin-top:20px">
+				<a href="myTrip.html" class="btn btn-lg btn-primary">Plan my trip!</a>
+			</div>
 		</div>
 	</body>
 </html>
